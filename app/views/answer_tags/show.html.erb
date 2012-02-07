@@ -1,0 +1,16 @@
+<span style="color:white"><%  "Answer Tag" %></span>
+
+<p>
+  <strong>Answer:</strong>
+  <%= @answer_tag.answer_id %>
+</p>
+<p>
+  <strong>Tag:</strong>
+  <%= @answer_tag.tag_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_answer_tag_path(@answer_tag) %> |
+  <%= link_to "Destroy", @answer_tag, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", answer_tags_path %>
+</p>

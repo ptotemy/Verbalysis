@@ -1,0 +1,22 @@
+<span style="color:white"><% "Question" %></span>
+
+<p>
+  <strong>Statement:</strong>
+  <%= @question.name %>
+</p>
+<% @answers.each do |answer| %>
+    <p>
+      <strong>Answer:</strong>
+      <%= answer.name %>
+      <% answer.answer_tags.each do |tag| %>
+       | <%= Tag.find(tag.tag_id).name %>
+      <% end %>
+    </p>
+<% end %>
+
+
+<p>
+  <%= link_to "Edit", edit_question_path(@question) %> |
+  <%= link_to "Destroy", @question, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", questions_path %>
+</p>

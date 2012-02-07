@@ -1,0 +1,22 @@
+
+<%= content_for :page_header do %>
+<span style="color:white"><%  "Answer Tags" %></span>
+<% end %>
+
+<table>
+  <tr>
+    <th>Answer</th>
+    <th>Tag</th>
+  </tr>
+  <% for answer_tag in @answer_tags %>
+    <tr>
+      <td><%= answer_tag.answer_id %></td>
+      <td><%= answer_tag.tag_id %></td>
+      <td><%= link_to "Show", answer_tag %></td>
+      <td><%= link_to "Edit", edit_answer_tag_path(answer_tag) %></td>
+      <td><%= link_to "Destroy", answer_tag, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Answer Tag", new_answer_tag_path %></p>

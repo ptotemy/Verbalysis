@@ -1,0 +1,22 @@
+
+<%= content_for :page_header do %>
+<span style="color:white"><%  "Answers" %></span>
+<% end %>
+
+<table>
+  <tr>
+    <th>Question</th>
+    <th>Statement</th>
+  </tr>
+  <% for answer in @answers %>
+    <tr>
+      <td><%= answer.question_id %></td>
+      <td><%= answer.name %></td>
+      <td><%= link_to "Show", answer %></td>
+      <td><%= link_to "Edit", edit_answer_path(answer) %></td>
+      <td><%= link_to "Destroy", answer, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Answer", new_answer_path %></p>

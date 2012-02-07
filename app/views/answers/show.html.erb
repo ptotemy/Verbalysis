@@ -1,0 +1,16 @@
+<span style="color:white"><%  "Answer" %></span>
+
+<p>
+  <strong>Question:</strong>
+  <%= @answer.question_id %>
+</p>
+<p>
+  <strong>Statement:</strong>
+  <%= @answer.name %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_answer_path(@answer) %> |
+  <%= link_to "Destroy", @answer, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", answers_path %>
+</p>

@@ -1,0 +1,41 @@
+<%= form_for @answer_tag do |f| %>
+
+
+<% if @answer_tag.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@answer_tag.errors.count, "error") %> prohibited this answer_tagfrom being saved:</h2>
+
+          <ul>
+            <% @answer_tag.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+
+
+<table class="condensed-table">
+      <tr>
+        <td><%= f.label :answer_id %></td>
+
+        <td><%= f.select :answer_id,Answer.all.collect{|var|[var.name,var.id]} %></td>
+
+            
+      </tr>
+
+      <tr>
+        <td><%= f.label :tag_id %></td>
+
+        <td><%= f.select :tag_id,Tag.all.collect{|var|[var.name,var.id]} %></td>
+
+            
+      </tr>
+
+</table>
+<br>
+<br>
+
+<%= f.submit "Submit" ,:style=>"margin:auto",:class=>"btn primary large"%>
+
+<% end %>
